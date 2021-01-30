@@ -50,9 +50,24 @@ public class Main {
         System.out.println();
 
         //Задание 4:
-        System.out.println("задание 4:");
+        System.out.println("Задание 4:");
         int[][] array4 = new int[5][5];
         fillDiagArr(array4);
+        System.out.println();
+
+
+        //Задание 5:
+        System.out.println("Задание 5:");
+        int[] array5 = {4, 8, 1 , 56 ,78 ,3 ,9};
+        findMaxMin(array5);
+        System.out.println();
+
+        //Задание 6:
+        System.out.println("Задание 6:");
+        int[] array6 = {2,7,3,1,5};
+        //findEqual(array6);
+        System.out.println(findEqual(array6));
+
 
 
         }
@@ -93,8 +108,35 @@ public class Main {
                 }
                 System.out.println(Arrays.toString(array[i]));
             }
-
         }
+        // Метод ищет максимальный и минимальный элемент массива и выводит их в консоль
+        public static void findMaxMin (int[] array){
+        int max = -2147483647, min = 2147483647;
+        for (int i = 0; i<array.length; i++){
+            if (array[i] > max) max = array[i];
+            if (array[i] < min) min = array[i];
+        }
+            System.out.println(Arrays.toString(array));
+            System.out.println("Максимальное число в массиве: "+max);
+            System.out.println("Минимальное число в массиве: " +min);
+        }
+
+        //
+        public static boolean findEqual (int[] array) {
+            float sum = 0, half;
+            boolean x=false;
+            for (int i = 0; i < array.length; i++) {
+                sum += array[i];
+            }
+            half = sum / 2;
+            sum = 0;
+            for (int i = 0; i < array.length; i++) {
+                sum += array[i];
+                if (sum == half) x = true;
+            }
+               return x;
+            }
+
 
 
 }
