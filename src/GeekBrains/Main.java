@@ -77,8 +77,12 @@ public class Main {
             System.out.println(Arrays.toString(array));
             System.out.println();
             for (int i = 0; i < array.length; i++) {
-                if (array[i] == 1) array[i] = 0;
-                else array[i] = 1;
+                if (array[i] == 1) {
+                    array[i] = 0;
+                }
+                else {
+                    array[i] = 1;
+                }
             }
             System.out.println("Новый массив:");
             System.out.println(Arrays.toString(array));
@@ -95,7 +99,9 @@ public class Main {
             System.out.println("Первоначальный массив:");
             System.out.println(Arrays.toString(array));
         for (int i = 0; i< array.length; i++){
-            if (array[i]<6) array[i] = array[i]*2;
+            if (array[i]<6) {
+                array[i] = array[i]*2;
+            }
         }
             System.out.println("Новый массив:");
             System.out.println(Arrays.toString(array));
@@ -103,18 +109,28 @@ public class Main {
         // Метод заполняет диагональ массива единицами
         public static void fillDiagArr (int[][] array){
             for (int i =0; i< array.length; i++){
-                for (int j = 0; j<array[i].length; j++){
-                    if (i==j) array[i][j] = 1;
+                for (int j = 0; j<array[i].length; j++) {
+                    if (i == j) {
+                        array[i][j] = 1;
+                    }
+                    if (j == ((array.length-1) - i)) {
+                        array[i][j] = 1;
+                    }
                 }
-                System.out.println(Arrays.toString(array[i]));
+                    System.out.println(Arrays.toString(array[i]));
+
             }
         }
         // Метод ищет максимальный и минимальный элемент массива и выводит их в консоль
         public static void findMaxMin (int[] array){
         int max = -2147483647, min = 2147483647;
         for (int i = 0; i<array.length; i++){
-            if (array[i] > max) max = array[i];
-            if (array[i] < min) min = array[i];
+            if (array[i] > max) {
+                max = array[i];
+            }
+            if (array[i] < min) {
+                min = array[i];
+            }
         }
             System.out.println(Arrays.toString(array));
             System.out.println("Максимальное число в массиве: "+max);
@@ -132,7 +148,9 @@ public class Main {
             sum = 0;
             for (int i = 0; i < array.length; i++) {
                 sum += array[i];
-                if (sum == half) x = true;
+                if (sum == half) {
+                    x = true;
+                }
             }
                return x;
             }
