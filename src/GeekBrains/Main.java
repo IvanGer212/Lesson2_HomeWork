@@ -97,8 +97,8 @@ public class Main {
         public static void fillArray (int[] array) {
             for (int i=0; i< array.length; i++) {
                 array[i] = i * 3;
-                System.out.print(array[i] + " ");
             }
+            System.out.println(Arrays.toString(array));
         }
         // Метод умножает элемент массива на 2 если элемент меньше 6. Результат выводится в консоль
         public static void changeArray (int[] array){
@@ -114,16 +114,14 @@ public class Main {
         }
         // Метод заполняет диагональ массива единицами
         public static void fillDiagArr (int[][] array){
+            int maxIndex = array.length-1;
             for (int i =0; i< array.length; i++){
                 for (int j = 0; j<array[i].length; j++) {
-                    if (i == j) {
-                        array[i][j] = 1;
-                    }
-                    if (j == ((array.length-1) - i)) {
+                    if ((i == j) || (j == ((maxIndex) - i))) {
                         array[i][j] = 1;
                     }
                 }
-                    System.out.println(Arrays.toString(array[i]));
+                System.out.println(Arrays.toString(array[i]));
 
             }
         }
